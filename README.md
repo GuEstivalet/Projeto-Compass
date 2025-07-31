@@ -344,7 +344,7 @@ Bash
 ```
 sudo tail -f /var/log/monitoramento.log
 ```
-Você deverá ver uma mensagem de "ALERTA: Site indisponível!".
+Você deverá ver uma mensagem de "[AAAA-MM-DD HH:MM:SS]-ERRO:Serviço indisponível! Código: 000".
 
 Verifique seu canal do Discord: Você deve receber uma notificação do webhook informando que o site está fora do ar:
 
