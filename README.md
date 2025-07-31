@@ -56,7 +56,8 @@ Na tabela de rotas privada, adicione uma rota para 0.0.0.0/0 apontando para o NA
 
 Ao fim, a topologia da sua VPC deve se parecer com o exemplo abaixo:
 
-<img src="https://github.com/user-attachments/assets/bcec6692-a7dd-4fa8-ac05-85e43647ab47" alt="Topologia da VPC" width="100%" />
+<img width="1247" height="430" alt="image" src="https://github.com/user-attachments/assets/0fb2db7f-4c0c-44dd-8fc4-8c545dfb71f9" />
+
 
 Criação das Instâncias EC2:
 Crie uma instância EC2 para Bastion Host (Ubuntu/Debian):
@@ -82,7 +83,9 @@ SSH (Porta 22): De dentro da VPC (ex: do Security Group do Bastion Host).
 HTTP (Porta 80): Se o seu site for acessado de forma pública através de um Load Balancer, o Security Group deverá permitir a entrada HTTP da origem do Load Balancer. Lembre-se que o NAT Gateway só permite tráfego de saída.
 
 A configuração da instância pode ser feita como no exemplo abaixo:
-<img src="https://github.com/user-attachments/assets/23273eb5-634a-4079-b887-fd74f8a476a4" alt="Configuração da Instância EC2 Web Server" width="100%" />
+
+<img width="858" height="360" alt="Captura de tela 2025-07-30 232601" src="https://github.com/user-attachments/assets/156ff4e7-1bd9-4cc3-a0aa-9e41449c5410" />
+
 
 ### 2. Configuração de Acesso SSH via Bastion Host
 
