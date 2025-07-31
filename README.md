@@ -15,7 +15,7 @@ Agendamento de Tarefas: Utilizar cron para automatizar a execução de scripts.
 
 Notificações: Integrar alertas de monitoramento com serviços de comunicação como o Discord.
 
-##📋 Pré-requisitos para o Projeto
+## 📋 Pré-requisitos para o Projeto
 Para replicar e executar este projeto com sucesso, você precisará dos seguintes:
 
 Fundamentos de Linux: Familiaridade com comandos básicos de terminal (ex: cd, ls, sudo, apt, systemctl, tail, ssh, crontab).
@@ -285,14 +285,14 @@ Adicione a seguinte linha no final do arquivo e salve (para que a tarefa seja ag
 ```
 * * * * * /home/ubuntu/scripts/monitor.sh
 ```
-4. Testes e Verificação
+## 4. Testes e Verificação
 Após toda a configuração manual, é crucial verificar se tudo está funcionando conforme o esperado.
 
-# Teste de Acesso ao Site
+### Teste de Acesso ao Site
 
 Lembre-se: sua instância do Web Server está em uma sub-rede privada e não é diretamente acessível da internet sem um ponto de entrada público.
 
-# Verificando o Nginx via SSH
+### Verificando o Nginx via SSH
 Conecte-se ao seu Web Server via SSH (usando o ProxyJump configurado):
 
 Bash
@@ -307,7 +307,7 @@ systemctl status nginx
 ```
 Você deve ver Active: active (running).
 
-# Verificando os Logs do Monitoramento
+### Verificando os Logs do Monitoramento
 Ainda na sessão SSH do Web Server, visualize os logs do script de monitoramento:
 
 Bash
@@ -347,7 +347,7 @@ sudo systemctl start nginx
 ```
 Após mais um minuto, o log deverá voltar a mostrar "Site disponível" e as notificações de erro pararão.
 
-🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 AWS EC2: Máquinas virtuais para Bastion Host e Web Server.
 
 AWS VPC: Configuração de rede isolada e segura.
