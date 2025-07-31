@@ -1,8 +1,11 @@
-# Projeto: Servidor Web Monitorado na AWS
+#  Projeto: Servidor Web Monitorado na AWS
+
 ## Resumo
+
 Este projeto detalha a configuração de um ambiente de servidor web com Nginx na Amazon Web Services (AWS) e a implementação de um sistema básico de monitoramento de disponibilidade, com notificações via Discord. Ele abrange a infraestrutura de rede, instalação de serviços e automação de monitoramento, consolidando habilidades essenciais em Linux, AWS e Bash Scripting, realizadas manualmente na instância.
 
 ## 🎯 Objetivos de Aprendizagem
+
 Infraestrutura AWS: Compreender e aplicar conceitos de VPC, Subnets (públicas e privadas), Internet Gateway (IGW), NAT Gateway, Route Tables e Security Groups.
 
 Instâncias EC2: Provisionar, configurar e gerenciar máquinas virtuais na nuvem.
@@ -29,7 +32,9 @@ Conta Discord para Webhook: Necessário para configurar e receber as notificaç�
 Bash Scripting: Habilidade básica para entender e modificar scripts simples em Bash.
 
 ## 💻 Etapas Detalhadas do Projeto
+
 ### 1. Configuração do Ambiente AWS
+
 Nesta etapa, você construirá a base de rede e as instâncias EC2 para o seu servidor web e o bastion host.
 
 Tarefas de Rede:
@@ -80,6 +85,7 @@ A configuração da instância pode ser feita como no exemplo abaixo:
 <img src="https://github.com/user-attachments/assets/23273eb5-634a-4079-b887-fd74f8a476a4" alt="Configuração da Instância EC2 Web Server" width="100%" />
 
 ### 2. Configuração de Acesso SSH via Bastion Host
+
 Após criar suas instâncias, configure o acesso SSH seguro através do Bastion Host.
 
 Preparação da Chave SSH:
@@ -337,7 +343,10 @@ sudo tail -f /var/log/monitoramento.log
 ```
 Você deverá ver uma mensagem de "ALERTA: Site indisponível!".
 
-Verifique seu canal do Discord: Você deve receber uma notificação do webhook informando que o site está fora do ar.
+Verifique seu canal do Discord: Você deve receber uma notificação do webhook informando que o site está fora do ar:
+
+<img width="548" height="105" alt="image" src="https://github.com/user-attachments/assets/c51bf9b9-9a6b-4b19-840e-da6e6462a0f7" />
+
 
 Restaure o serviço Nginx:
 
