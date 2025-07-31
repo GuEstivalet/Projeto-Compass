@@ -1,17 +1,16 @@
 #!/bin/bash
-SITE_URL="http://localhost"
+
 LOG_FILE="/var/log/monitoramento.log"
-WEBHOOK_URL="use seu webhook aqui"
+TARGET_URL="http://localhost" # Monitore o site localmente
+DISCORD_WEBHOOK_URL="seu_webhook"
 
-HTTP_STATUS=\$(curl -o /dev/null -s -w "%{http_code}" \$SITE_URL)  # faz uma requisição a url, ignorando a parte html e escrevendo o codigo http, que simboliza o status do site.
-DATA_ATUAL=\$(date +"%d/%m/%Y %H:%M:%S")
+HTTP_STATUS=$(curl -o /dev/null -s -w "%{http_code}\n" $TARGET_URL)
+TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
 
-# 200 é o codigo de uma requisicao web OK, qualquer outro codigo, o site esta com problemas
-if [ "\$HTTP_STATUS" -ne 200 ]; then 
-    MENSAGEM="[ALERTA] O site \$SITE_URL está OFFLINE! Status: \$HTTP_STATUS"
-    echo "\$DATA_ATUAL - \$MENSAGEM" >> \$LOG_FILE
-    curl -H "Content-Type: application/json" -X POST -d "{\"content\": \"\$MENSAGEM\"}" \$WEBHOOK_URL
+if [ "$HTTP_STATUS" -eq 200 ]; then
+    echo "[$TIMESTAMP] Site disponível (Status: $HTTP_STATUS)." | sudo tee -a $LOG_FILE
 else
-    MENSAGEM="[INFO] O site \$SITE_URL está funcionando normalmente. Status: \$HTTP_STATUS"
-    echo "\$DATA_ATUAL - \$MENSAGEM" >> \$LOG_FILE
+    MESSAGE="[$TIMESTAMP] ALERTA: Site indisponível! (Status: $HTTP_STATUS) em $(hostname)."
+    echo "$MESSAGE" | sudo tee -a $LOG_FILE
+    curl -H "Content-Type: application/json" -X POST -d '{"content": "'"$MESSAGE"'"}' $DISCORD_WEBHOOK_URL
 fi
