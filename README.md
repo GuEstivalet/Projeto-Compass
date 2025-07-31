@@ -205,6 +205,12 @@ sudo unlink /etc/nginx/sites-enabled/default
 sudo ln -s /etc/nginx/sites-available/meu-projeto /etc/nginx/sites-enabled/
 ```
 
+Teste o acesso ao site com (exibe o conteúdo de index.html, representa que o servidor está ativo):
+
+```
+curl localhost
+```
+
 Reinicie o Nginx para aplicar as configurações e habilite-o para iniciar com o sistema:
 
 Bash
