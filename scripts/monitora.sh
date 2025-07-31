@@ -10,7 +10,7 @@ TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
 if [ "$HTTP_STATUS" -eq 200 ]; then
     echo "[$TIMESTAMP] Site disponível (Status: $HTTP_STATUS)." | sudo tee -a $LOG_FILE
 else
-    MESSAGE="[$TIMESTAMP] ALERTA: Site indisponível! (Status: $HTTP_STATUS) em $(hostname)."
+    MESSAGE="[$TIMESTAMP]-ERRO:Serviço indisponível! Código: $HTTP_STATUS em $(hostname)."
     echo "$MESSAGE" | sudo tee -a $LOG_FILE
     curl -H "Content-Type: application/json" -X POST -d '{"content": "'"$MESSAGE"'"}' $DISCORD_WEBHOOK_URL
 fi
