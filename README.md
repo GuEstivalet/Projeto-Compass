@@ -84,7 +84,7 @@ HTTP (Porta 80): Se o seu site for acessado de forma pública através de um Loa
 
 A configuração da instância pode ser feita como no exemplo abaixo:
 
-<img width="858" height="360" alt="Captura de tela 2025-07-30 232601" src="https://github.com/user-attachments/assets/156ff4e7-1bd9-4cc3-a0aa-9e41449c5410" />
+<img width="858" height="88" alt="Captura de tela 2025-07-30 232601" src="https://github.com/user-attachments/assets/a028828b-fb88-4c39-b2b2-bba800288543" />
 
 
 ### 2. Configuração de Acesso SSH via Bastion Host
